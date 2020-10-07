@@ -19,6 +19,15 @@ const people = [
 
 function olderPeople(peopleArr, age) {
   // return something
+  let olderPeople = [];
+
+  peopleArr.forEach(person=> {
+    if(person.age != undefined && person.age > age){
+      olderPeople.push(person);
+    }
+  });
+
+  return olderPeople;
 }
 
 // 2. Do a console.log to verify your function.
