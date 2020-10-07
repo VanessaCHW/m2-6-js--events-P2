@@ -19,6 +19,23 @@ const people = [
 
 function fullName(peopleArr) {
   // return something
+  let arrayOfNames = [];
+  let fullName = "";
+
+  for(let i = 0; i<peopleArr.length;i++){
+    fullName = peopleArr[i].name.first + " ";
+
+    if(peopleArr[i].name.middle != undefined){
+      fullName += peopleArr[i].name.middle + " ";
+    } 
+
+    fullName += peopleArr[i].name.last;
+    arrayOfNames.push(fullName);
+    
+    fullName = "";
+  }
+
+  return arrayOfNames;
 }
 
 // 2. Do a console.log to verify your function.
