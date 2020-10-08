@@ -87,6 +87,18 @@ const staffMembers = [
 
 const getData = (arr, key, val) => {
   // return something
+  let returnArray = [];
+
+  arr.forEach(person => {
+    if(key in person && person[key]==val){
+      returnArray.push(person);
+    }else if(person.skillLevels[key]!==undefined){
+      if(person.skillLevels[key]>=val)
+      returnArray.push(person);
+    }
+  });
+    
+  return returnArray;
 };
 
 // 2. Do a console.log to verify your function.
